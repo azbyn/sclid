@@ -33,6 +33,8 @@ yay -S pnglatex
 ** Downloading
 The easy part:
 
+clone this to a directory of your choice
+
 #+BEGIN_SRC sh
 git clone https://github.com/azbyn/sclid
 #+END_SRC
@@ -54,7 +56,7 @@ make -j2
 sudo make install
 #+END_SRC
 
-** First setup (this is avoided if you configured =signal-cli= before)
+** First setup (this is avoided if you configured signal-cli before)
 #+BEGIN_SRC sh
 sclid YOUR_PHONE_NUMBER
 #+END_SRC

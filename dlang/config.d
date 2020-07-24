@@ -2,7 +2,7 @@ import std.path;
 
 //you probably don't use my signal widget for awesomewm, so you can set this
 //to false
-enum bool useDbusWidget = true;
+enum bool useDbusWidget = false;
 
 //you should probably leave this on.
 enum bool checkForNewVersion = true;

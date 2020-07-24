@@ -34,7 +34,7 @@ buildJava:
 install:
 	tar xf build/distributions/sclid-${SIGNAL_CLI_VERSION}.tar -C /opt
 	ln -sf /opt/sclid-${SIGNAL_CLI_VERSION}/bin/sclid /usr/local/bin
-	cp ${D_TARGET} /usr/local/lib
+	cp ${D_TARGET} /usr/lib
 
 echo:
 	@echo ${D_SRCS}
