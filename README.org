@@ -1,8 +1,8 @@
-Sclid - a signal interface for your terminal[fn:1]
+Sclid - a signal interface for your terminal*
 
 this was inspired by [[https://github.com/isamert/scli][scli]] and uses a (highly) modified version of [[https://github.com/AsamK/signal-cli][signal-cli]]
 
-[fn:1] if your terminal is [[https://github.com/kovidgoyal/kitty/][kitty]] - not guaranteed to work on other terminals.
+ *if your terminal is [[https://github.com/kovidgoyal/kitty/][kitty]] - not guaranteed to work on other terminals.
 
 * Installation
 ** Dependencies
