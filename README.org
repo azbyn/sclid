@@ -16,7 +16,6 @@ this was inspired by [[https://github.com/isamert/scli][scli]] and uses a (highl
    - =xclip= - for copying messages to clipboard,
    - =feh= and =qrencode= - only needed for the setup,
    - by the default you need a powerline patched font. you could edit =config.d= to replace those characters,
-   - by default it uses [[https://github.com/chriskempson/base16][base16]] - you could replace =niceGray256= in =config.d= otherwise this is an ugly blue,
    - some sort of editor - you probably have at least =nano= or something.
 
 *** Btw i use arch
