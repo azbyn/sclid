@@ -1,0 +1,21 @@
+{
+	"authors": [
+		"azbyn"
+	],
+	"configurations": [
+		{
+			"name": "exe",
+			"targetType": "executable",
+			"versions": [
+				"Exec"
+			]
+		}
+	],
+	"libs": [ "sqlite3", "dbus-1" ],
+	"description": "scli rewritten in D",
+	"license": "go nuts",
+	"name": "sclid",
+	"sourcePaths": [
+		"dlang"
+	]
+}

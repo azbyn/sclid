@@ -1,0 +1,3 @@
+[submodule "dlang"]
+	path = dlang
+	url = ./dlang/

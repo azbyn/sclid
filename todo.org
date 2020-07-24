@@ -1,0 +1,40 @@
+ - cleanup the java bit
+ - more utf16? (like for reactions)
+ - less utf32
+
+ - make infobars gray when not selected
+ - performance - std.array.appender?
+ - handle tabs (\t)
+ - fix goofness when sending messages from the phone
+
+ - Contacts:
+   - scroll
+ - Messages:
+   - go to quoted message
+   - fix line highlight with emoji
+   - page movement: M-v, C-v
+   - source code highlight
+   - message formatting
+   - preview links
+   - show ExpiresInSeconds
+   - show the message being sent (with "sending..." below)
+ - Input:
+   - spell check
+   - built in copy & paste?
+   - paste for images?
+   - more emacs-y keybindings C-k, M-d
+   - scrolling if too big
+   - undo - redo
+   - preview latex being written?
+
+ - test if emoji is thicc with that font? (with checking cursor pos) ie in urxvt heart is 1-wide
+
+ - fix reply to attachment (we should prolly pass the attachments to mkQuote)
+
+ - some sorta nice /loading/ screen
+
+ - encrypted message storage (like Signal-Desktop?)
+ - proper short names (in a config?)
+ - a new config file?
+
+ - messages "conversation" with errors and such?

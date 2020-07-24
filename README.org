@@ -1,0 +1,110 @@
+Sclid - a signal interface for your terminal[fn:1]
+
+this was inspired by [[https://github.com/isamert/scli][scli]] and uses a (highly) modified version of [[https://github.com/AsamK/signal-cli][signal-cli]]
+
+[fn:1] if your terminal is [[https://github.com/kovidgoyal/kitty/][kitty]] - not guaranteed to work on other terminals.
+
+* Installation
+** Dependencies
+   - =JRE 10= or above - it's bad enough working with java, at least let me have a modern(ish) version,
+   - =dmd= or another d compiler, if you want to use another modify =DC= in the Makefile
+   - =w3imgdisplay= - for showing images - in the future other protocols might be available,
+   - =pnglatex= - for muh \LaTeX - not optional,
+   - =ranger= - for selecting attachments,
+   - =sqlite3= - for storing the message history - even if you don't store message to 
+     disk (which you probably shouldn't) you need this,
+   - =xclip= - for copying messages to clipboard,
+   - =feh= and =qrencode= - only needed for the setup,
+   - by the default you need a powerline patched font. you could edit =config.d= to replace those characters,
+   - by default it uses [[https://github.com/chriskempson/base16][base16]] - you could replace =niceGray256= in =config.d= otherwise this is an ugly blue,
+   - some sort of editor - you probably have at least =nano= or something.
+
+*** Btw i use arch
+#+BEGIN_SRC sh
+sudo pacman -S jre11-openjdk dmd w3m ranger sqlite3 xclip feh qrencode
+#+END_SRC
+
+=pnglatex= is only available in the aur. So replace =yay= with your aur helper of choice.
+
+#+BEGIN_SRC sh
+yay -S pnglatex
+#+END_SRC
+
+** Downloading
+The easy part:
+
+#+BEGIN_SRC sh
+git clone https://github.com/azbyn/sclid
+#+END_SRC
+
+** Building
+  Before doing anything you should go to =dlang/config.d= and edit things there. 
+  This is customized to work on my machine and might not work on yours. 
+  (or there might be things i want, but you don't (like the storing of messages part)
+
+  While this is a valid =dub= project, you shouldn't run =dub= for building, that's only for testing the ui
+  without waiting for signal (the java bit) to load up.
+
+  You could build it in release mode, but you shouldn't do that yet. There +might be+ are bugs, and you wouldn't
+  know what went wrong.
+
+*** The actual instructions
+#+BEGIN_SRC sh
+make -j2
+sudo make install
+#+END_SRC
+
+** First setup (this is avoided if you configured =signal-cli= before)
+#+BEGIN_SRC sh
+sclid YOUR_PHONE_NUMBER
+#+END_SRC
+
+Where you should replace =YOUR_PHONE_NUMBER= with your full phone number (natürlich)
+(something like =+1234567890=)
+
+When the qr code shows up (you should respond with =y= before that), on your phone's Signal app go to 
+=Settings > Linked Devices= scan the code.
+
+You should now be see some windows.
+
+You should type =:sync= to sync your contacts. 
+
+** Using it afterwards
+
+if you only have one user setup, you can do:
+#+BEGIN_SRC sh
+sclid
+#+END_SRC
+
+otherwise just:
+
+#+BEGIN_SRC sh
+sclid YOUR_PHONE_NUMBER
+#+END_SRC
+
+* Quick terminology
+  - =Minubuffer= that bit at the bottom with the =:= that you open with =:= or =M-x=
+  - =ContactsWindow= the one on the left
+  - =MessagesWindow= the one that has the messages
+  - =InputWindow= where you write the message - below messages
+
+* Keybindings
+  There are vim-like and emacs-like keybindings. You'll figure it out.
+  (look in =dlang/graphics/windowBase.d replaceSimilar= and in =dlang/graphics/inputWindow.d loop= for a full list)
+  
+  Something that might be useful is that in =InputWindow= =Alt+enter= adds a new line but doesn't send the message.
+
+  In the =MinibufferWindow= (that bit at the bottom with the =:=) you can use these commands:
+
+  - =quit= for quitting,
+  - =sync= for syncing (you already know that one),
+  - =reply= replies to the message you highlighted with your cursor in =MessagesWindow=
+  - =unreply= to quit out of the replying
+  - =attach= for attaching files
+  - =edit= to edit the message in your favorite editor
+  - =react= react to message you highlighted. If used alone it removes the reaction. Otherwise you should append
+    =laugh=, =up=, =down=, =wow=, =angry=, =heart= or =sad=, which do what they sound like they do.
+  - =copy= for copying the current message to the clipboard
+
+  (look in =dlang/graphics/minibuffer.d= for a full list)
+
