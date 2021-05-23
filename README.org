@@ -1,5 +1,7 @@
 Sclid - a signal interface for your terminal*
 
+It no longer works and I will no longer work on it, so it's archived.
+
 this was inspired by [[https://github.com/isamert/scli][scli]] and uses a (highly) modified version of [[https://github.com/AsamK/signal-cli][signal-cli]]
 
  *if your terminal is [[https://github.com/kovidgoyal/kitty/][kitty]] - not guaranteed to work on other terminals.
